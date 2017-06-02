@@ -5,7 +5,7 @@
 
   angular.module('app').controller('Shell', Shell);
 
-  function Shell() {
+  function Shell($scope) {
 
     var vm = this;
     vm.database = setupFirebase();
@@ -21,7 +21,7 @@
        		'content': value.content
 	    });
 	});
-	
+	$scope.$apply();	
     });
 
     vm.username = 'Matt';
